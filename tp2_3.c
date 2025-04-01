@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define N 5
+#define M 7
+
+int i, j;
+int mt[N][M];
+
+int main()
+{
+    srand(time(NULL));
+    // for (int i = 0; i < N; i++)
+    // {
+    //     for (int j = 0; j < M; j++)
+    //     {
+    //         mt[i][j] = i + j;
+    //     }
+    // }
+
+    // for (int i = 0; i < N; i++)
+    // {
+    //     for (int j = 0; j < M; j++)
+    //     {
+    //         printf("%d ", mt[i][j]);
+    //     }
+    //     printf("\n  ");
+    // }
+
+    int *ptr = &mt[0][0];
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < M; j++)
+        {
+            (*(ptr + i * M + j)) = 1 + rand() % 100;
+            // printf("%lf ", *ptr);
+        }
+        // printf("\n");
+    }
+
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < M; j++)
+        {
+            printf("%d ", mt[i][j]);
+        }
+        printf("\n  ");
+    }
+    return 0;
+}
