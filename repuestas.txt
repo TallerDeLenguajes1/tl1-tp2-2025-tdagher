@@ -1,0 +1,1 @@
+2f) no se puede ver el archivo tp2_1_2.c porque esta creado en la branch Opcion-2 y yo me encuentro ubicado en la rama main , la cual aun no existe este archivo
