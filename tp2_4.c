@@ -10,12 +10,18 @@ struct compu
     char *tipo_cpu;       // Tipo de procesador (apuntador a cadena de caracteres)
 };
 void generarPCs(struct compu pcs[], int cantidad);
+void listarPCs(struct compu pcs[], int cantidad);
 
 int main()
 {
     srand(time(NULL));
+
     struct compu pcs[5];
+
     generarPCs(pcs, 5);
+
+    printf("Lista de PCs:\n");
+    listarPCs(pcs, 5);
     return 0;
 }
 
@@ -29,5 +35,14 @@ void generarPCs(struct compu pcs[], int cantidad)
         pcs[i].anio = rand() % 10 + 2015;
         pcs[i].cantidad_nucleos = rand() % 8 + 1;
         pcs[i].tipo_cpu = tipos[rand() % 6];
+    }
+}
+
+void listarPCs(struct compu pcs[], int cantidad)
+{
+    for (int i = 0; i < cantidad; i++)
+    {
+        printf("PC %d: Velocidad: %d GHz, Año: %d, Núcleos: %d, CPU: %s\n",
+               i + 1, pcs[i].velocidad, pcs[i].anio, pcs[i].cantidad_nucleos, pcs[i].tipo_cpu);
     }
 }
